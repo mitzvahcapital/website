@@ -88,6 +88,7 @@
 									"NYSE:F",
 									"NYSE:T",
 									"NYSE:MMM",
+									"NYSE:BMY",
 									"NASDAQ:CSCO",
 									"NYSE:PFE",
 									"NYSE:LUV"
@@ -95,12 +96,72 @@
 								"details": true,
 								"hotlist": true,
 								"calendar": true,
+								overrides: {
+									"mainSeriesProperties.candleStyle.borderColor": "#FF9900",
+									"mainSeriesProperties.candleStyle.borderDownColor": "#FF9900",
+									"mainSeriesProperties.candleStyle.borderUpColor": "#363FF2",
+									"mainSeriesProperties.candleStyle.downColor": "#FFFFFF",
+									"mainSeriesProperties.candleStyle.drawBody": true,
+									"mainSeriesProperties.candleStyle.drawBorder": true,
+									"mainSeriesProperties.candleStyle.drawWick": true,
+									"mainSeriesProperties.candleStyle.upColor": "#FFFFFF",
+									"mainSeriesProperties.candleStyle.wickColor": "#FFFFFF",
+									"mainSeriesProperties.candleStyle.wickDownColor": "#FF9900",
+									"mainSeriesProperties.candleStyle.wickUpColor": "#363FF2",
+									"mainSeriesProperties.haStyle.borderColor": "#FF9900",
+									"mainSeriesProperties.haStyle.borderDownColor": "#FF9900",
+									"mainSeriesProperties.haStyle.borderUpColor": "#363FF2",
+									"mainSeriesProperties.haStyle.downColor": "#FFFFFF",
+									"mainSeriesProperties.haStyle.drawBody": true,
+									"mainSeriesProperties.haStyle.drawBorder": true,
+									"mainSeriesProperties.haStyle.drawWick": true,
+									"mainSeriesProperties.haStyle.upColor": "#FFFFFF",
+									"mainSeriesProperties.haStyle.wickColor": "#FFFFFF",
+									"mainSeriesProperties.haStyle.wickDownColor": "#FF9900",
+									"mainSeriesProperties.haStyle.wickUpColor": "#363FF2"
+								},
 								"studies": [
-									"STD;Linear_Regression",
-									"STD;Technical%1Ratings",
-									"STD;SMA",
-									"STD;Visible%1Average%1Price"
+									{
+										id: "STD;Visible_Average_Price"
+									},
+									{
+                            			id: "MASimple@tv-basicstudies",
+										inputs: {
+											length: 200,
+										}
+									},
+									{
+                            			id: "STD;Linear_Regression",
+										inputs: {
+											length: 100,
+										}
+									},
+									{
+                            			id: "MACD@tv-basicstudies"
+									},
+									{
+                            			id: "BB@tv-basicstudies",
+										inputs: {
+											length: 20
+										}
+									}
 								],
+								studies_overrides: {
+									"volume.volume.color.0": "#D3D3D3",
+									"volume.volume.color.1": "#808080",
+									"volume.volume.transparency": 70,
+									"volume.ma length": 20,
+									"volume.volume ma.display": true,
+									"volume.volume ma.color": "#D3D3D3",
+									"volume.volume ma.transparency": 30,
+									"volume.volume ma.linewidth": 2,
+									"moving average.ma.color": "#808080",
+        							"moving average.ma.linewidth": 1,
+									"bollinger bands.basis.display": false,
+									"bollinger bands.upper.color": "#D3D3D3",
+									"bollinger bands.lower.color": "#D3D3D3",
+									"bollinger bands.stddev": 3
+								},
 								"show_popup_button": true,
 								"popup_width": "1000",
 								"popup_height": "650",
