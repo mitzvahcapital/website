@@ -62,13 +62,13 @@
 				<!-- Main BEGIN -->
 					<div id="main" class="alt">
 
-						<section id="bullishlist" style="height: 75vh">
-							<!-- TradingView Widget BEGIN -->
+						<section id="watchlist" style="height: 75vh">
+							<!-- TradingView Chart Widget BEGIN -->
 								<div class="tradingview-widget-container" style="height:100%;width:100%">
 								<div id="tradingview_cc95f" style="height:100%;width:100%"></div>
 								<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 								<script type="text/javascript">
-									const bullishWidget = new TradingView.widget(
+									const widget = new TradingView.widget(
 										{
 											"autosize": true,
 											"symbol": "NYSE:JOBY",
@@ -99,6 +99,7 @@
 												"###BULLISH WATCHLIST 1",
 												"CME:METZ2023",
 												"NYSE:KKR",
+												"NYSE:HWM",
 												"NASDAQ:AFRM",
 												"NASDAQ:MRVL",
 												"NASDAQ:CPRT",
@@ -119,12 +120,16 @@
 												"NYSE:SSD",
 												"NASDAQ:SKYW",
 												"NASDAQ:TTWO",
-												"NASDAQ:PDD"
+												"NASDAQ:PDD",
+												"###BEARISH WATCHLIST",
+												"NYSE:F",
+												"NYSE:PFE",
+												"NYSE:LUV"
 											],
 											"details": true,
 											"hotlist": true,
 											"calendar": true,
-											overrides: {
+											"overrides": {
 												"mainSeriesProperties.priceLineColor": "#000000",
 												"mainSeriesProperties.priceLineWidth": 2,
 												"mainSeriesProperties.candleStyle.borderColor": "#FF5252",
@@ -181,7 +186,7 @@
 													id: "STD;MACD"
 												}
 											],
-											studies_overrides: {
+											"studies_overrides": {
 												"volume.volume.color.0": "#D3D3D3",
 												"volume.volume.color.1": "#808080",
 												"volume.volume.transparency": 70,
@@ -214,7 +219,7 @@
 									);
 								</script>
 								</div>
-							<!-- TradingView Widget END -->
+							<!-- TradingView Chart Widget END -->
 						</section> 
 
 						<!-- Waiting BEGIN -->
@@ -250,140 +255,26 @@
 							</section>
 						<!-- Waiting END -->
 
-						<section id="bearishlist" style="height: 75vh">
-							<!-- TradingView Widget BEGIN -->
-								<div class="tradingview-widget-container" style="height:100%;width:100%">
-									<div id="tradingview_2b584" style="height:100%;width:100%"></div>
-									<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-									<script type="text/javascript">
-										const bearishWidget = window.tvBearishWidget = new TradingView.widget(
+						<section id="screener" style="height: 75vh">
+								<!-- TradingView Screener Widget BEGIN -->
+									<div class="tradingview-widget-container">
+										<div class="tradingview-widget-container__widget"></div>
+										<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
 											{
-												"autosize": true,
-												"symbol": "NYSE:T",
-												"timezone": "America/New_York",
-												"theme": "light",
-												"style": "8",
+												"width": "100%",
+												"height": "100%",
+												"defaultColumn": "performance",
+												"defaultScreen": "above_52wk_high",
+												"market": "NASDAQ",
+												"showToolbar": true,
+												"colorTheme": "dark",
 												"locale": "en",
-												"intervals": ["1m", "5m", "1h", "D", "W"],
-												"enable_publishing": true,
-												"gridColor": "rgba(255, 255, 255, 0.06)",
-												"withdateranges": true,
-												"range": "12M",
-												"hide_side_toolbar": false,
-												"allow_symbol_change": true,
-												"watchlist": [
-													"###INDICES",
-													"FRED:DJIA",
-													"FRED:NDQ100",
-													"FRED:SP500",
-													"###FUNDS",
-													"AMEX:DIA",
-													"NASDAQ:QQQ",
-													"AMEX:SPY",
-													"AMEX:IWM",
-													"###CRYPTOCURRENCIES",
-													"CME:MET1!",
-													"CME:MBT1!",
-													"###BEARISH WATCHLIST",
-													"NYSE:F",
-													"NYSE:PFE",
-													"NYSE:LUV"
-												],
-												"details": true,
-												"hotlist": true,
-												"calendar": true,
-												"overrides": {
-													"mainSeriesProperties.priceLineColor": "#000000",
-													"mainSeriesProperties.priceLineWidth": 2,
-													"mainSeriesProperties.candleStyle.borderColor": "#FF5252",
-													"mainSeriesProperties.candleStyle.borderDownColor": "#FF5252",
-													"mainSeriesProperties.candleStyle.borderUpColor": "#26A69A",
-													"mainSeriesProperties.candleStyle.downColor": "#FFFFFF",
-													"mainSeriesProperties.candleStyle.drawBody": true,
-													"mainSeriesProperties.candleStyle.drawBorder": true,
-													"mainSeriesProperties.candleStyle.drawWick": true,
-													"mainSeriesProperties.candleStyle.upColor": "#FFFFFF",
-													"mainSeriesProperties.candleStyle.wickColor": "#FFFFFF",
-													"mainSeriesProperties.candleStyle.wickDownColor": "#FF5252",
-													"mainSeriesProperties.candleStyle.wickUpColor": "#26A69A",
-													"mainSeriesProperties.haStyle.borderColor": "#FF5252",
-													"mainSeriesProperties.haStyle.borderDownColor": "#FF5252",
-													"mainSeriesProperties.haStyle.borderUpColor": "#26A69A",
-													"mainSeriesProperties.haStyle.downColor": "#FFFFFF",
-													"mainSeriesProperties.haStyle.drawBody": true,
-													"mainSeriesProperties.haStyle.drawBorder": true,
-													"mainSeriesProperties.haStyle.drawWick": true,
-													"mainSeriesProperties.haStyle.upColor": "#FFFFFF",
-													"mainSeriesProperties.haStyle.wickColor": "#FFFFFF",
-													"mainSeriesProperties.haStyle.wickDownColor": "#FF5252",
-													"mainSeriesProperties.haStyle.wickUpColor": "#26A69A"
-												},
-												studies_overrides: {
-													"volume.volume.color.0": "#D3D3D3",
-													"volume.volume.color.1": "#808080",
-													"volume.volume.transparency": 70,
-													"volume.ma length": 20,
-													"volume.volume ma.display": true,
-													"volume.volume ma.color": "#D3D3D3",
-													"volume.volume ma.transparency": 30,
-													"volume.volume ma.linewidth": 2,
-													"moving average.ma.color": "#FF6D00",
-													"moving average.ma.linewidth": 2,
-													"moving average.ma.transparency": 20,
-													"linear regression.upper deviation": 4,
-													"linear regression.lower deviation": -4,
-													"linear regression.use upper deviation": true,
-													"linear regression.use lower deviation": true,
-													"linear regression.upper.color": "#D3D3D3",
-													"linear regression.lower.color": "#808080",
-													"linear regression.extend lines right": false,
-													"linear regression.show pearson's r": false,
-													"bollinger bands.basis.display": false,
-													"bollinger bands.upper.color": "#D3D3D3",
-													"bollinger bands.lower.color": "#D3D3D3",
-													"bollinger bands.stddev": 3
-												},
-												"studies": [
-													{
-														id: "Compare@tv-basicstudies",
-														inputs: {
-															symbol: "CME_MINI:NQ1!",
-															pricescale: "new-left"
-														}
-													},
-													{
-														id: "LinearRegression@tv-basicstudies",
-														inputs: {
-															count: 100,
-															source: "close"
-														}
-													},
-													{
-														id: "MASimple@tv-basicstudies",
-														inputs: {
-															length: 200,
-														}
-													},
-													{
-														id: "BB@tv-basicstudies",
-														inputs: {
-															length: 20
-														}
-													},
-													{
-														id: "STD;MACD"
-													}
-												],
-												"show_popup_button": true,
-												"popup_width": "1000",
-												"popup_height": "650",
-												"container_id": "tradingview_2b584"
+												"isTransparent": true
 											}
-										);
-									</script>
-								</div>
-							<!-- TradingView Widget END -->
-						</section> 
+										</script>
+									</div>
+								<!-- TradingView Screener Widget END -->
+						</section>
 
 					</div>
 				<!-- Main END -->
