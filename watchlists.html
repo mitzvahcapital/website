@@ -159,8 +159,6 @@
 											"hotlist": true,
 											"calendar": true,
 											"overrides": {
-												"priceScaleSelectionStrategyName": "left",
-												"mainSeriesProperties.priceAxisProperties.percentage": false,
 												"mainSeriesProperties.priceLineColor": "#000000",
 												"mainSeriesProperties.priceLineWidth": 2,
 												"mainSeriesProperties.candleStyle.borderColor": "#FF5252",
@@ -186,13 +184,13 @@
 												"mainSeriesProperties.haStyle.wickDownColor": "#FF5252",
 												"mainSeriesProperties.haStyle.wickUpColor": "#26A69A"
 											},
-											"studies": [
+											"compareSymbols": [
 												{
-													id: "Compare@tv-basicstudies",
-													inputs: {
-														symbol: "CME_MINI:NQ1!"
-													}
-												},
+													"symbol": "CME_MINI:NQ1!",
+													"position": "NewPriceScale"
+												}
+											],
+											"studies": [
 												{
 													id: "LinearRegression@tv-basicstudies",
 													inputs: {
